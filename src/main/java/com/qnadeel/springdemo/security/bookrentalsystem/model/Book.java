@@ -6,6 +6,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -39,6 +40,8 @@ public class Book {
     @Column(name = "book_price")
     private int bookPrice;
 
-    @OneToMany(mappedBy = "book")
-    private List<Rental> rentals;
+    @ManyToMany(mappedBy = "books")
+    private List<Rental> rentals = new ArrayList<>();
+
+
 }

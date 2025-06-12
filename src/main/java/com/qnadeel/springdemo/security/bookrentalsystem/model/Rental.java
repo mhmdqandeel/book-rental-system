@@ -7,6 +7,8 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -25,13 +27,23 @@ public class Rental{
     @JoinColumn(name = "user_id")
     private User user;
 
-    @ManyToOne
-    @JoinColumn(name = "book_id")
-    private Book book;
+    @ManyToMany
+    @JoinTable(
+            name = "rental_books",
+            joinColumns = @JoinColumn(name = "rental_id"),
+            inverseJoinColumns = @JoinColumn(name = "book_id")
+    )
+    private List<Book> books = new ArrayList<>();
 
+    @Column(name = "rent_date")
     private LocalDate rentDate;
 
+    @Column(name = "rent_return_date")
     private LocalDate returnDate;
 
+    @Column(name = "rent_actual_return_date")
     private LocalDate actualReturnDate;
+
+    @Column(name = "rental_status")
+    private RentalStatus rentalStatus;
 }

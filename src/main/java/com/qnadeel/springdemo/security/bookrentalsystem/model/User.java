@@ -17,20 +17,34 @@ import java.util.List;
 @NoArgsConstructor
 public class User {
 
+//    @PrePersist
+//    void userRole(){
+//        if (userRole == null){
+//            userRole = "ROLE_USER";
+//        }
+//    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int userId;
+    @Column(name = "user_id")
+    private Long userId;
 
+    @Column(name = "user_name")
     private String userName;
 
+    @Column(name = "user_password")
     private String userPassword;
 
+    @Column(name = "user_email")
     private String userEmail;
 
-    private String userRole;
+    @Column(name = "user_role")
+    @Builder.Default
+    private String userRole = "ROLE_USER";
 
     @OneToMany(mappedBy = "user")
     private List<Rental> rentals;
 
+    @Builder.Default
     private boolean isActive = true;
 }
