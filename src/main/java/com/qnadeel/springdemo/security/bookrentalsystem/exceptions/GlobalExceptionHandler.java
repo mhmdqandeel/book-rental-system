@@ -1,4 +1,4 @@
-package com.qnadeel.springdemo.security.bookrentalsystem.exeptions;
+package com.qnadeel.springdemo.security.bookrentalsystem.exceptions;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;

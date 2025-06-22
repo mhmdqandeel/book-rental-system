@@ -1,7 +1,7 @@
 package com.qnadeel.springdemo.security.bookrentalsystem.services;
 
 import com.qnadeel.springdemo.security.bookrentalsystem.dtos.BookDto;
-import com.qnadeel.springdemo.security.bookrentalsystem.exeptions.ResourcesNotFoundException;
+import com.qnadeel.springdemo.security.bookrentalsystem.exceptions.ResourcesNotFoundException;
 import com.qnadeel.springdemo.security.bookrentalsystem.entities.Book;
 import com.qnadeel.springdemo.security.bookrentalsystem.repositories.BookRepository;
 import lombok.AllArgsConstructor;

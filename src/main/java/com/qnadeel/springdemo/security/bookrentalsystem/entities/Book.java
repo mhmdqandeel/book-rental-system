@@ -42,6 +42,4 @@ public class Book {
 
     @ManyToMany(mappedBy = "books")
     private List<Rental> rentals = new ArrayList<>();
-
-
 }

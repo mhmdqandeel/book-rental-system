@@ -1,7 +1,7 @@
 package com.qnadeel.springdemo.security.bookrentalsystem.services;
 
 import com.qnadeel.springdemo.security.bookrentalsystem.dtos.MyUserDetails;
-import com.qnadeel.springdemo.security.bookrentalsystem.exeptions.ResourcesNotFoundException;
+import com.qnadeel.springdemo.security.bookrentalsystem.exceptions.ResourcesNotFoundException;
 import org.springframework.context.annotation.Lazy;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
